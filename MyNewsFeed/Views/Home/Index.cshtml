@@ -2,7 +2,42 @@
     ViewData["Title"] = "Home Page";
 }
 
-<h2>Latest Headlines:</h2>
-<hr />
-@Html.ActionLink("View Latest Headlines", "GetHeadlines")
 
+
+
+<!DOCTYPE html>
+  <html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>News Feed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        
+             $('.display-view').show(function () {
+              $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: '@Url.Action("GetHeadlines")',
+                success: function (result) {
+                  $('#result4').html(result);
+                }
+              });
+            });
+               
+          });
+    </script>
+  </head>
+  <body>
+        <h2>Choose A Country</h2>
+         @Html.DropDownList("Country")
+         <hr>
+		
+        
+        <h2>News Feed</h2>
+        <h4 class="display-view"></h4>
+        <div id="result4"></div>
+
+
+<div id="result6"></div>
+  </body>
+</html>

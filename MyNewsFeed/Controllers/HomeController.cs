@@ -24,12 +24,15 @@ namespace MyNewsFeed.Controllers
 
         public IActionResult Index()
         {
+            ViewBag.Country = new SelectList(Country.GetCountries(), "Symbol", "Name");
             return View();
         }
 
         public IActionResult GetHeadlines()
         {
-            var allHeadlines = NewsItem.GetHeadlines();
+            var country = "us";
+
+            var allHeadlines = NewsItem.GetHeadlines(country);
             return View(allHeadlines);
         }
 

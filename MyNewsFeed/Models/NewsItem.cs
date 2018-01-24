@@ -23,10 +23,11 @@ namespace MyNewsFeed.Models
         {
         }
 
-        public static List<NewsItem> GetHeadlines()
+        public static List<NewsItem> GetHeadlines(string country)
         {
+            
             var client = new RestClient("https://newsapi.org/v2/");
-            var request = new RestRequest("top-headlines?country=us&apiKey=" + EnvironmentVariables.apiKey, Method.GET);
+            var request = new RestRequest("top-headlines?country="+country+"&apiKey=" + EnvironmentVariables.apiKey, Method.GET);
             var response = new RestResponse();
             Task.Run(async () =>
             {
