@@ -1,0 +1,10 @@
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/bin/Debug/netcoreapp1.1/MyNewsFeed.deps.json
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/bin/Debug/netcoreapp1.1/MyNewsFeed.runtimeconfig.json
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/bin/Debug/netcoreapp1.1/MyNewsFeed.runtimeconfig.dev.json
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/obj/Debug/netcoreapp1.1/MyNewsFeed.csprojResolveAssemblyReference.cache
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/obj/Debug/netcoreapp1.1/MyNewsFeed.csproj.CoreCompileInputs.cache
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/obj/Debug/netcoreapp1.1/MyNewsFeed.AssemblyInfo.cs
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/bin/Debug/netcoreapp1.1/MyNewsFeed.dll
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/bin/Debug/netcoreapp1.1/MyNewsFeed.pdb
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/obj/Debug/netcoreapp1.1/MyNewsFeed.dll
+/Users/Guest/Projects/MyNewsFeed/MyNewsFeed/obj/Debug/netcoreapp1.1/MyNewsFeed.pdb
