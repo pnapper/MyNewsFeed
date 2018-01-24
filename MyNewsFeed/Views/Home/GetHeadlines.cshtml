@@ -1,0 +1,25 @@
+﻿@model IEnumerable<MyNewsFeed.Models.NewsItem>
+
+<style>
+    img {max-width:100%}
+</style>
+
+<h2>Latest Headlines</h2>
+<hr />
+<ol>
+    @foreach (var newsitem in Model)
+    {
+        <div class="well row">
+		    <div class="col-md-3">
+                <img src="@Html.DisplayFor(modelItem => newsitem.urlToImage)">
+		    </div>
+    		<div class="col-md-9">
+                <h2><a href="@Html.DisplayFor(modelItem => newsitem.url)">@Html.DisplayFor(modelItem => newsitem.Title)</a></h2>
+                <p>@Html.DisplayFor(modelItem => newsitem.Description)</p>
+    		</div>
+        </div>
+
+    }
+</ol>
+
+@Html.ActionLink("Back home", "Index")

@@ -16,7 +16,6 @@ namespace MyNewsFeed.Models
 
         }
 
-        //public DbSet<UserPreference> UserPreferences { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
@@ -70,3 +69,4 @@ namespace MyNewsFeed.Models
         }
     }
 }
+
