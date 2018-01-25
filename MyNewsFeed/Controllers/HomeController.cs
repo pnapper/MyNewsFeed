@@ -25,39 +25,44 @@ namespace MyNewsFeed.Controllers
         public IActionResult Index()
         {
             ViewBag.Country = new SelectList(Country.GetCountries(), "Symbol", "Name");
+            ViewBag.Category = new SelectList(Category.GetCategories(), "CategoryName", "Title");
             return View();
         }
 
         [HttpPost]
-        public IActionResult Index(string symbol)
+        public IActionResult Index(string symbol, string categoryname)
         {
+            Console.WriteLine("You are here");
+            Console.WriteLine(categoryname);
             ViewBag.Country = new SelectList(Country.GetCountries(), "Symbol", "Name");
+            ViewBag.Category = new SelectList(Category.GetCategories(), "CategoryName", "Title");
 
 
-
-            return RedirectToAction("GetHeadlines", "symbol");
+            return RedirectToAction("GetHeadlines", "symbol", "categoryname");
         }
 
-        public IActionResult GetHeadlines(string country)
+        public IActionResult GetHeadlines(string country, string category)
         {
-            if( country == null)
+            if( country == null && category == null)
             {
                 country = "us";
+                category = "";
             } 
                 
-            var allHeadlines = NewsItem.GetHeadlines(country);
+            var allHeadlines = NewsItem.GetHeadlines(country, category);
             return View(allHeadlines);
         }
 
-        public IActionResult UpdateHeadlines(string country)
+        public IActionResult UpdateHeadlines(string country, string category)
         {
-            if (country == null)
+            if (country == null && category == null)
             {
                 country = "us";
+                category = "";
                 Console.WriteLine("YOU DIDNT GET THE COUNTRY IN HERE");
             }
 
-            var newHeadlines = NewsItem.GetHeadlines(country);
+            var newHeadlines = NewsItem.GetHeadlines(country, category);
             return Json(newHeadlines);
         }
 

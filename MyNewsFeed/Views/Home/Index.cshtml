@@ -28,6 +28,9 @@
 		$("#Country").change(function() {
             $("form").submit();             
 		})
+		$("#Category").change(function() {
+            $("form").submit();             
+        })
 		$("form").submit();
       });
     </script>
@@ -36,14 +39,16 @@
 </style>
   </head>
   <body>
-        <h2>Choose A Country</h2>
+        <h2>Filter Results</h2>
 		@using (Html.BeginForm())
         {
+		<h3>Choose A Country</h3>
          @Html.DropDownList("Country")
-<!--		<input type="submit" value="Update" class="btn btn-default"/>-->
-		}
-         <hr>		
-        
+		<h3>Choose A Category</h3>
+         @Html.DropDownList("Category")
+<!--        <input type="submit" value="Update" class="btn btn-default"/>-->
+        }
+        <hr>              
         <h2>News Feed</h2>
         <h4 class="display-view"></h4>
         <div id="result"></div>

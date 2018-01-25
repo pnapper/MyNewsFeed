@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{E04DFA04-9467-46EC-B0D0-AF494EBA13BE}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="MyNewsFeed/Models/NewsItem.cs">
     <Files>
-      <File FileName="MyNewsFeed/Controllers/HomeController.cs" Line="61" Column="24" />
-      <File FileName="MyNewsFeed/Views/Home/Index.cshtml" Line="50" Column="10" />
+      <File FileName="MyNewsFeed/Controllers/HomeController.cs" Line="52" Column="41" />
+      <File FileName="MyNewsFeed/Views/Home/Index.cshtml" Line="42" Column="30" />
       <File FileName="MyNewsFeed/Views/Home/GetHeadlines.cshtml" Line="21" Column="15" />
-      <File FileName="MyNewsFeed/Models/Country.cs" Line="8" Column="41" />
-      <File FileName="MyNewsFeed/Models/NewsItem.cs" Line="28" Column="13" />
+      <File FileName="MyNewsFeed/Models/Country.cs" Line="20" Column="58" />
+      <File FileName="MyNewsFeed/Models/NewsItem.cs" Line="26" Column="82" />
+      <File FileName="MyNewsFeed/Models/Category.cs" Line="11" Column="37" />
+      <File FileName="MyNewsFeed/Models/EnvironmentVariables.cs" Line="9" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
