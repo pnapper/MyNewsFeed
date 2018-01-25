@@ -28,12 +28,37 @@ namespace MyNewsFeed.Controllers
             return View();
         }
 
-        public IActionResult GetHeadlines()
+        [HttpPost]
+        public IActionResult Index(string symbol)
         {
-            var country = "us";
+            ViewBag.Country = new SelectList(Country.GetCountries(), "Symbol", "Name");
 
+
+
+            return RedirectToAction("GetHeadlines", "symbol");
+        }
+
+        public IActionResult GetHeadlines(string country)
+        {
+            if( country == null)
+            {
+                country = "us";
+            } 
+                
             var allHeadlines = NewsItem.GetHeadlines(country);
             return View(allHeadlines);
+        }
+
+        public IActionResult UpdateHeadlines(string country)
+        {
+            if (country == null)
+            {
+                country = "us";
+                Console.WriteLine("YOU DIDNT GET THE COUNTRY IN HERE");
+            }
+
+            var newHeadlines = NewsItem.GetHeadlines(country);
+            return Json(newHeadlines);
         }
 
 

@@ -1,43 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-
 <!DOCTYPE html>
-  <html xmlns="http://www.w3.org/1999/xhtml">
+  <html>
   <head>
     <title>News Feed</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-        
-             $('.display-view').show(function () {
-              $.ajax({
+           $("form").submit(function(event) {
+			event.preventDefault();
+			$("#result").empty();
+            $.ajax({
                 type: 'GET',
-                dataType: 'html',
-                url: '@Url.Action("GetHeadlines")',
+                data: $(this).serialize(),
+                dataType: 'json',
+                url: '@Url.Action("UpdateHeadlines")',
                 success: function (result) {
-                  $('#result4').html(result);
+                  console.log(result);
+			      result.forEach(function(article) {
+                    $("#result").append("<div class='well row'><div class='col-md-3'><img src='"+article.urlToImage+"'></div><div class='col-md-9'><h2><a href='"+article.url+"'>"+article.title+"</a></h2><p>"+article.description+"</p></div></div>");
+			        })
                 }
-              });
-            });
-               
           });
+	    });
+		$("#Country").change(function() {
+            $("form").submit();             
+		})
+		$("form").submit();
+      });
     </script>
+		<style>
+    img {max-width:100%}
+</style>
   </head>
   <body>
         <h2>Choose A Country</h2>
+		@using (Html.BeginForm())
+        {
          @Html.DropDownList("Country")
-         <hr>
-		
+<!--		<input type="submit" value="Update" class="btn btn-default"/>-->
+		}
+         <hr>		
         
         <h2>News Feed</h2>
         <h4 class="display-view"></h4>
-        <div id="result4"></div>
-
-
-<div id="result6"></div>
+        <div id="result"></div>
   </body>
 </html>
